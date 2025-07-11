@@ -105,8 +105,8 @@ function generateCommand() {
   }
 
   if (source === "playlist") {
-    command += `-o "%(playlist_index)s - %(title)s.%(ext)s" `;
-  } else {
+  command += `-o "%(title)s.%(ext)s" `;
+} else {
     command += `-o "%(title)s.%(ext)s" `;
   }
 
