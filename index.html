@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YouTube Downloader Command Generator</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAABnklEQVR4Xu3YsU3DUBRA0U9EpUIkCUcQRA4YQHFIPAN3KYZ4ju6rR2m+3p6OtW4Xb5LIdl0/9mAgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgu0JvQN32ZP9jS+qAr/Bu8Ct6D7yQBW6F+1RXhK5YAriLXhG2LcQiXhEeAQ+0FvqQp4VlwUdlUL6UK+C3Uk7yQTyg0MIwNNSTaZDlTvDwzzh++Ctp5xTDYpSEu+EeiOXXCXYc6RPAW/JBlqGd9Jqj4TKOBxRX1cgK8YVLC25EGn3zH9QhMCuFL2CdT0PEmh6XBb+O8Cl60Ik6iVn5AW6JLDhEo0x/FPpxaVtJCxq4VrAgMmk2AwDKZNgMAnyG7i6IBGJEbCMmzMgSlIKJzAqdxmJFXFrs5AKdnOwQCm4AjMC5gCjICGA6ogqAsrwvTG2Oj4d7PmyjAL7dMQpQVkFp6OcG4Zge8G3i7PQlZIh6zADjPRAHEYAHEYAHEYAHEYAHEYAHEYAHEYAHEYAHEYAHEYAHEYAvwDGkg8cDYMyiIAAAAASUVORK5CYII="/>
+
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">Suved</div>
+  </nav>
+
+  <div id="copy-banner" class="copy-banner">Copied to clipboard!</div>
+
+
+  <main class="container">
+    <label for="url" class="top-label">Video or Playlist URL:</label>
+    <input type="text" id="url" placeholder="Paste YouTube video or playlist URL here…" autofocus />
+
+    <div class="row">
+      <div class="form-group">
+        <label for="type">Download Type:</label>
+        <select id="type">
+          <option value="mp3">MP3 (Audio)</option>
+          <option value="mp4">MP4 (Video)</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="source">Source Type:</label>
+        <select id="source">
+          <option value="single">Single Video</option>
+          <option value="playlist">Playlist</option>
+        </select>
+      </div>
+
+      <div class="form-group quality-group">
+        <label for="quality">Quality:</label>
+        <select id="quality">
+          <!-- Filled dynamically -->
+        </select>
+      </div>
+    </div>
+
+    <div class="folder-section">
+      <label for="folder-text" class="manual-folder-label"
+        >Enter folder path to save files (optional):</label
+      >
+      <input
+        type="text"
+        id="folder-text"
+        placeholder="C:\Users\You\Downloads\Music"
+        autocomplete="off"
+      />
+    </div>
+
+    <button id="generate-btn">Generate Command</button>
+
+    <p class="explanation">
+      If you specify a folder, the command will start with
+      <code>cd "folder-path"</code> to change directory before downloading.
+    </p>
+
+    <textarea id="output" rows="4" readonly></textarea>
+    <button id="copy-btn">📋 Copy to Clipboard</button>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
